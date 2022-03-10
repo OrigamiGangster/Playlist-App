@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<h1>Welcome</h1>
+
+{% endblock %}
+
+{% block body %}
+
+<h2>New Album</h2>
+    {% from "_formhelpers.html" import render_field %}
+    <form method="post">
+        <dl>
+            {{ render_field(form.artist) }}
+            {{ render_field(form.title) }}
+            {{ render_field(form.release_date) }}
+        </dl>
+        <p><input type="submit" value="Submit">
+    </p></form>
+
+
+{% endblock %}
